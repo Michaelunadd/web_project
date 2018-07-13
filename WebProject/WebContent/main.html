@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.bxslider.js"></script>
+<script>
+/* 	$(function(){
+		$(window).scroll(function(){  //스크롤하면 아래 코드 실행
+	       var num = $(this).scrollTop();  // 스크롤값
+	       if( num > 218 ){  // 스크롤을 36이상 했을 때
+	          $("#cata").css("position","fixed");
+	       }else{
+	           $("#cata").css("position","absolute");
+	       }
+	  });
+	}); */
+	$(function() {
+		var topBar = $("#cata").offset();
+		$(window).scroll(function() {
+			var docScrolly = $(this).scrollTop()
+			var barThis = $("#cata")
+			var fixNext = $("#wrap")
+			
+			if(docScrolly > topBar.top){
+				barThis.addClass("top_bar_fix");
+				fixNext.addClass("pd_top_30");
+			}else{
+				barThis.removeClass("top_bar_fix");
+				fixNext.removeClass("pd_top_30");
+			}
+		})
+	})
+/* 	$(function(){
+	    $('.bxslider').bxSlider({
+	        auto: true,
+	        speed: 500,
+	        pause: 4000,
+	        mode:'fade',
+	        autoControls: true,
+	        pager:true,
+	    });
+	}); */
+	$(function(){
+		  $('.bxslider').bxSlider({
+		    mode: 'fade',
+		   	speed : 200,
+		   	slideWidth : 1200
+		  });
+		});
+</script>
+<style type="text/css">
+	.top_bar_fix{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;}
+	.pd_top_30{
+		padding-top: 80px;}
+	@keyframes rotate{
+		from {
+			transform: rotate(3deg);}
+		to{
+			transform: rotate(-3deg);}
+		}
+  #b{
+  	animation-name : rotate;
+  	animation-duration : 0.5s;
+  	animation-direction : alternate;
+  	animation-iteration-count : infinite;}
+  #event img{
+  		width: 150px;
+  		height: 150px;
+		position: absolute;
+		left: 100px;}
+  #fixed img{
+  		width: 30px;
+  		height: 30px;
+  		position: fixed;
+  		right: 35px;
+  		opacity: 0.4;
+  		box-sizing: border-box;
+  		border: 1px solid gray;}
+  #top{
+  	width: 100%;}
+  #login{
+  	width: 1200px;
+  	margin-right: 340px;
+  	margin-left: auto;}
+  #login dl{
+  	float: left;
+  	margin: 0px 7px;
+  	color: gray;}
+  #login:after{
+  	content: "";
+  	display: block;
+  	clear: both;}
+  #name{
+  	padding:50px 0px;
+  	height: 86px;}
+  #cata{
+  	border-bottom: 1px solid gray;
+  	border-top: 1.5px solid black;
+  	width: 100%;
+  	background-color: white;
+  	padding: 5px 0px;}
+  #cata dl{
+    float: left;
+  	margin: 0px 10px;
+  	font-weight: bold;
+  	}
+  #cata:after{
+  	content: "";
+  	display: block;
+  	clear: both;}
+  #wrap{
+  	width: 1200px;
+  	margin: 0px auto;}
+  #best{
+  	width: 300px;
+  	height: 500px;
+  	box-sizing: border-box;
+  	border: 1px solid black;
+  	float: left;}
+  #footer{
+  	border-top: 1px solid gray; 
+  	border-bottom: 1px solid gray; 
+  	border-top: 1px solid gray; 
+  	width: 100%; 
+  	background-color: gray;
+  	color: white;}
+</style>
+</head>
+<body>
+
+<div id="fixed">
+	<a href="#top"><img src="img/up-최종.jpg" 
+		alt="위" style="bottom: 80px;"></a>
+	<a href="#footer"><img src="img/down-최종.jpg" 
+		alt="아래" style="bottom: 40px;"></a></div>
+		
+<div id="event">
+	<img src="img/당일배송-최종.jpg" alt="당일배송" id="b" style="bottom: 50px;"></div>
+<div id="event">
+	<img src="img/여름특가세일-최종.jpg" alt="여름특가세일" style="bottom: 220px;"></div>
+
+  <div id="top">
+  	<div id="login">
+  	  <div style="float: left;">
+  	  	<dl>NOTICE</dl>
+  	  	<dl>Q&A</dl>
+  	  </div>
+  	  <div style="float: right;">
+  		<dl>Home</dl>
+  		<dl>Login</dl>
+  		<dl>Join</dl>
+  		<dl>Cart</dl>
+  		<dl>Mypage</dl>
+  		<dl><input type="text" value="상품검색" style="background-color: white; color: gray; border-bottom: 1px solid white;"></dl>
+  		<dl><input type="button" value="검색"></dl></div>
+  	</div>	<!-- login -->
+  	<hr>
+  	<div id="name">
+  		<h1 style="text-align: center;">UNIVERSE</h1></div>	<!-- name -->
+  	<div id="cata">
+  	  <div style="width: 1200px; margin-left: auto; margin-right: 350px;">
+  		<div id="cata_front"><dl>=</dl>
+  		<dl><a href="#best_item">BEST ITEM</a></dl>
+  		<dl><a href="#today">당일 배송</a></dl>
+  		</div> 
+  	  <div style="float: right;">
+  		<dl>OUTER</dl>
+  		<dl>TOP</dl>
+  		<dl>BOTTOM</dl>
+  		<dl>ACC</dl>
+  		<dl>SHOES</dl></div>
+  		</div></div>	<!-- cata --> 
+  </div>	<!-- top --> 
+  <div id="wrap">
+  	<div id="in_top">
+  		<div class="bxslider">
+  			<div><img src="img/red.png" title="strawberry" style="border: 1px solid black;"></div>
+  			<div><img src="img/yellow.png" title="lemon" style="border: 1px solid black;"></div>
+  			<div><img src="img/purple.png" title="grape" style="border: 1px solid black;"></div>
+  		</div>
+  	<div id="best_item"> 
+  		<hr><h4 style="text-align: center; padding: 10px;">BEST ITEM</h4><hr>
+  		<div>
+  			<div id="best">그림1</div>
+  			<div id="best">그림2</div>
+  			<div id="best">그림3</div>
+  			<div id="best">그림4</div>
+  			<br>
+  			<div id="best">그림1</div>
+  			<div id="best">그림2</div>
+  			<div id="best">그림3</div>
+  			<div id="best">그림4</div>
+  			<br>
+  		</div>
+  	</div>	<!-- best_item -->
+  	<div style="clear: both;"></div>
+  	
+  	<div id="today"> 
+  		<hr><h4 style="text-align: center; padding: 10px;">당일 배송</h4><hr>
+  		<div>
+  			<div id="best">그림1</div>
+  			<div id="best">그림2</div>
+  			<div id="best">그림3</div>
+  			<div id="best">그림4</div>
+  			<br>
+  			<div id="best">그림1</div>
+  			<div id="best">그림2</div>
+  			<div id="best">그림3</div>
+  			<div id="best">그림4</div>
+  			<br>
+  		</div>
+  	</div>	<!-- best_item -->
+  	<div style="clear: both;"></div>
+  </div>	<!-- wrap -->
+	<br><br>
+  <div id="footer">
+  		<p style="text-align: center;">상호 : UNIVERSE | 사업자 등록번호 : 000-00-00000 | 대표 : 김인간<br>
+  		Tel : 0000-0000 | Fac : 000-000-0000 | Email : kimpeople@naver.com <br> 
+  		주소 : (00000) 우주 한가운데 반짝반짝 작은 지구별 어딘가 </p>
+  	</div>
+</body>
+</html>
